@@ -9,8 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/preact": "^4.1.0",
     "@vite-pwa/astro": "^1.1.0",
     "astro": "^5.11.2",
+    "maplibre-gl": "^5.6.1",
+    "preact": "^10.26.9",
     "vite-plugin-pwa": "^1.0.1"
   }
 }

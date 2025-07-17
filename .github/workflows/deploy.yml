@@ -22,6 +22,8 @@ jobs:
         run: npm install
 
       - name: Build
+        env:
+          PUBLIC_MAPTILER_API_KEY: ${{ secrets.PUBLIC_MAPTILER_API_KEY }}
         run: npm run build
 
       - name: Deploy to GitHub Pages
