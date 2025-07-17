@@ -41,7 +41,7 @@ export default defineConfig({
         globPatterns: ["**/*.{js,css,html,svg,png,ico,txt}"],
         runtimeCaching: [
           {
-            urlPattern: /^https://api\.maptiler\.com\/.*/i,
+            urlPattern: new RegExp('^https://api\\.maptiler\\.com/.*', 'i'),
             handler: "CacheFirst",
             options: {
               cacheName: "maptiler-tiles-cache",
