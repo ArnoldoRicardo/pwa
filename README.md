@@ -1,27 +1,3 @@
-esta applicacion es una PWA de un catalogo de creadoras de pueblos originarios.
-hay que mostrar la biografia de cada creadora, sus obras y un podcast(video o audio segun el caso) para explicar su obra.
-a la aplicacion se le va a gregar un mapa que muestre las ubicaciones de las creadoras en el mundo.
-
-la base de datos es un json con la siguiente estructura:
-
-```json
-{
-  "creadoras": [
-    {
-      "nombre": "nombre de la creadora",
-      "biografia": "biografia de la creadora",
-      "obras": [
-        {
-          "nombre": "nombre de la obra",
-          "descripcion": "descripcion de la obra",
-          "podcast": "https://www.youtube.com/watch?v=zdOvlEGoMP4"
-        }
-      ]
-    }
-  ]
-}
-```
-
 # Astro Starter Kit: Minimal
 
 ```sh
