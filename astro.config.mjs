@@ -11,40 +11,52 @@ export default defineConfig({
   base: "/pwa",
   integrations: [
     vitePwa({
-      registerType: "autoUpdate",
+      injectRegister: 'auto',
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.svg'],
+      includeManifestIcons: true,
+      experimental: {
+        directoryAndTrailingSlashHandler: true,
+      },
+      devOptions: {
+        enabled: true,
+      },
       manifest: {
-        name: "PWA Raiz",
-        short_name: "PWA Raiz",
-        description: "Una PWA de ejemplo creada con Astro.",
-        theme_color: "#ffffff",
-        background_color: "#ffffff",
+        name: 'PWA Raiz',
+        short_name: 'PWA Raiz',
+        description: 'Una PWA de ejemplo creada con Astro.',
+        theme_color: '#ffffff',
+        background_color: '#ffffff',
+        scope: '/pwa/',
+        start_url: '/pwa/',
         icons: [
           {
-            src: "pwa-192x192.png",
-            sizes: "192x192",
-            type: "image/png",
+            src: 'pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
           },
           {
-            src: "pwa-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
+            src: 'pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
           },
           {
-            src: "pwa-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-            purpose: "any maskable",
+            src: 'pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
           },
         ],
       },
       workbox: {
-        globPatterns: ["**/*.{js,css,html,svg,png,ico,txt}"],
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,txt}'],
+        navigateFallback: '/pwa/index.html',
         runtimeCaching: [
           {
             urlPattern: new RegExp('^https://api\\.maptiler\\.com/.*', 'i'),
-            handler: "CacheFirst",
+            handler: 'CacheFirst',
             options: {
-              cacheName: "maptiler-tiles-cache",
+              cacheName: 'maptiler-tiles-cache',
               expiration: {
                 maxEntries: 500, // Guarda hasta 500 teselas
                 maxAgeSeconds: 60 * 60 * 24 * 30, // 30 días
