@@ -39,6 +39,22 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ["**/*.{js,css,html,svg,png,ico,txt}"],
+        runtimeCaching: [
+          {
+            urlPattern: /^https://api\.maptiler\.com\/.*/i,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "maptiler-tiles-cache",
+              expiration: {
+                maxEntries: 500, // Guarda hasta 500 teselas
+                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 días
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+        ],
       },
     }),
     preact(),
