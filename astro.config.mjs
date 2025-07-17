@@ -52,14 +52,14 @@ export default defineConfig({
         screenshots: [
           {
             src: 'screenshots/screenshot-desktop.png',
-            sizes: '1280x720',
+            sizes: '1285x935',
             type: 'image/png',
             form_factor: 'wide',
             label: 'Captura de pantalla en escritorio'
           },
           {
             src: 'screenshots/screenshot-mobile.png',
-            sizes: '750x1334',
+            sizes: '397x690',
             type: 'image/png',
             form_factor: 'narrow',
             label: 'Captura de pantalla en móvil'
